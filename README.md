@@ -1,4 +1,4 @@
-# cwl-upload-conformance-badges
+# upload-conformance-badges
 It is a custom Github Action for uploading CWL conformance badges to specified repository.
 
 ## Example
@@ -21,7 +21,7 @@ jobs:
 
       - name: Save badges
         if: success() && github.event_name == 'push' # upload badges when this action is invoked by `push` event
-        uses: tom-tan/cwl-upload-conformance-badges@v1.0.0
+        uses: common-workflow-lab/upload-conformance-badges@v1.0.0
         with:
           cwlVersion: v1.0
           runner-name: your-runner
