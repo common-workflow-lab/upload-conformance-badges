@@ -1,6 +1,11 @@
 name: 'Upload CWL conformance badges'
 author: 'Tomoya Tanjo'
 description: 'Upload CWL conformance badges'
+
+branding:
+  icon: award
+  color: yellow
+
 inputs:
   cwlVersion:
     description: 'CWL version'
