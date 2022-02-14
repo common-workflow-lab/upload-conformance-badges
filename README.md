@@ -12,7 +12,7 @@ jobs:
 
       - name: Run conformance tests
         id: run-conformance
-        uses: common-workflow-lab/run-conformance-tests@v1.0.1
+        uses: common-workflow-lab/run-conformance-tests@v1
         with:
           cwlVersion: v1.0
           runner: your-runner
@@ -21,7 +21,7 @@ jobs:
 
       - name: Save badges
         if: success() && github.event_name == 'push' # upload badges when this action is invoked by `push` event
-        uses: common-workflow-lab/upload-conformance-badges@v1.0.0
+        uses: common-workflow-lab/upload-conformance-badges@v1
         with:
           cwlVersion: v1.0
           runner-name: your-runner
