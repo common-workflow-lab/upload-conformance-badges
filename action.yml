@@ -67,12 +67,7 @@ runs:
 
         git diff-index --quiet HEAD || git commit -m "Conformance test of $runner for CWL ${cwlVersion}" -m " Commit: ${GITHUB_SHA}"
 
-        if [ "$has_tag" = "true" ]; then
-          git tag -a "${tag}" -m "${runner} ${tag}"
-        fi
-
         git push --quiet
-        git push --quiet --tags
       env:
         cwlVersion: ${{ inputs.cwlVersion }}
         has_tag: ${{ startsWith(github.ref, 'refs/tags/') }}
