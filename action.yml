@@ -24,7 +24,7 @@ inputs:
     required: false
     default: false
   ssh-key:
-    description: 'deploy key to commit the repository specified in the `repository` field. Either `token` or `ssh-key` is needed'
+    description: 'deploy key to commit the repository specified in the `repository` field
     required: true
 runs:
   using: 'composite'
