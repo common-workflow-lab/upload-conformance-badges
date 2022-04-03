@@ -28,7 +28,7 @@ jobs:
           badgedir: ${{ steps.run-conformance.outputs.badgedir }}
           repository: ${{ github.repository_owner }}/conformance
           upload-default-branch: true
-          token: ${{ secrets.CONFORMANCE_TOKEN }}
+          ssh-key: ${{ secrets.CONFORMANCE_KEY }}
 ```
 
 ## Input parameters
@@ -40,6 +40,6 @@ jobs:
 | `badgedir` | true | - | full path to the directory that stores conformance badges |
 | `repository` | true | - | repository (in the form of `owner/repo`) to store badges |
 | `upload-default-branch` | false | false | whether uploading the result of HEAD in the default branch |
-| `token` | true | - | token to commit the repository specified in the `repository` field |
+| `ssh-key` | true | - | ssh key to commit the repository specified in the `repository` field. See [deploy keys](https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys) for details |
 
 This action has no output parameters.
