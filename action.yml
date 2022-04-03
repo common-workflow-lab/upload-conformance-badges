@@ -58,7 +58,7 @@ runs:
           latest_dir=${conformance_dir}/${runner}_latest
           tag_dir=${conformance_dir}/${runner}_${tag}
 
-          rm -rf $latest_di $tag_dir
+          rm -rf $latest_dir $tag_dir
           printf '{ "subject": "release", "status": "%s", "color": "blue" }' ${tag} > $badgedir/version.json
           cp -r $badgedir $latest_dir
           cp -r $badgedir $tag_dir
