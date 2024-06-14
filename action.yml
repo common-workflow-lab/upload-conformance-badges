@@ -62,7 +62,7 @@ runs:
           printf '{ "subject": "release", "status": "%s", "color": "blue" }' ${tag} > $badgedir/version.json
           cp -r $badgedir $latest_dir
           cp -r $badgedir $tag_dir
-          git add $latest_dir $tag_dir
+          git add $latest_dir/*.json $tag_dir/*.json
         fi
 
         git diff-index --quiet HEAD || git commit -m "Conformance test of $runner for CWL ${cwlVersion}" -m " Commit: ${GITHUB_SHA}"
