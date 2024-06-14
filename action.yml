@@ -51,7 +51,7 @@ runs:
           default_dir=${conformance_dir}/${runner}_${default_branch}
           rm -rf $default_dir
           cp -r $badgedir $default_dir
-          git add $default_dir
+          git add $default_dir/*.json
         fi
 
         if [ "$has_tag" = "true" ]; then
