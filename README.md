@@ -36,7 +36,7 @@ jobs:
 | Parameters | Required | Default | Description |
 |---|---|---|---|
 | `cwlVersion` | true | - | target CWL version |
-| `runne-namer` | true | - | name of CWL runner |
+| `runner-name` | true | - | name of CWL runner |
 | `badgedir` | true | - | full path to the directory that stores conformance badges |
 | `repository` | true | - | repository (in the form of `owner/repo`) to store badges |
 | `upload-default-branch` | false | false | whether uploading the result of HEAD in the default branch |
