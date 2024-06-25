@@ -23,6 +23,10 @@ inputs:
     description: 'whether uploading the result of HEAD in the default branch'
     required: false
     default: false
+  upload-markdown-reports:
+    description: 'whether uploading the markdown reports in addition to the conformance badges'
+    required: false
+    default: false
   ssh-key:
     description: 'deploy key to commit the repository specified in the `repository` field'
     required: true
@@ -52,6 +56,9 @@ runs:
           rm -rf $default_dir
           cp -r $badgedir $default_dir
           git add $default_dir/*.json
+          if [ "${{ inputs.upload-markdown-reports }}" = "true" ]; then
+            git add $default_dir/*.md
+          fi
         fi
 
         if [ "$has_tag" = "true" ]; then
@@ -63,6 +70,9 @@ runs:
           cp -r $badgedir $latest_dir
           cp -r $badgedir $tag_dir
           git add $latest_dir/*.json $tag_dir/*.json
+          if [ "${{ inputs.upload-markdown-reports }}" = "true" ]; then
+            git add $latest_dir/*.md $tag_dir/*.md
+          fi
         fi
 
         git diff-index --quiet HEAD || git commit -m "Conformance test of $runner for CWL ${cwlVersion}" -m " Commit: ${GITHUB_SHA}"
